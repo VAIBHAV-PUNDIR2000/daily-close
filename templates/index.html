@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+  <h1>Manifest for Today</h1>
+  <form id="taskForm" class="inline-form">
+    <input id="taskInput" autocomplete="off" placeholder="What needs to close today?" />
+    <button type="submit">Add</button>
+  </form>
+  {% if message %}<div class="banner">{{ message }}</div>{% endif %}
+</section>
+
+<section class="stats-grid">
+  <div class="card"><h3>Total</h3><p>{{ total }}</p></div>
+  <div class="card"><h3>Completed</h3><p>{{ completed }}</p></div>
+  <div class="card"><h3>Pending</h3><p>{{ pending }}</p></div>
+  <div class="card"><h3>Completion</h3><p>{{ pct }}%</p></div>
+</section>
+
+<section class="card">
+  <h2>Today’s Tasks</h2>
+  <ul class="task-list" id="taskList">
+    {% for t in tasks %}
+    <li class="task {{ 'closed' if t.status == 'closed' else '' }}" data-id="{{ t.id }}">
+      <button class="toggle">{{ '✅' if t.status == 'closed' else '⭕' }}</button>
+      <span>{{ t.title }}</span>
+      <small>{{ t.created_at.strftime('%I:%M %p') }}</small>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

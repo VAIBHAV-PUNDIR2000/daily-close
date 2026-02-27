@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="stats-grid">
+  <div class="card"><h3>Today Total</h3><p>{{ today_stats.total }}</p></div>
+  <div class="card"><h3>Completed</h3><p>{{ today_stats.completed }}</p></div>
+  <div class="card"><h3>Pending</h3><p>{{ today_stats.pending }}</p></div>
+  <div class="card"><h3>Completion</h3><p>{{ today_stats.pct }}%</p></div>
+</section>
+
+<section class="stats-grid">
+  <div class="card"><h3>Current Streak</h3><p>{{ streak }}</p></div>
+  <div class="card"><h3>Longest Streak</h3><p>{{ longest }}</p></div>
+</section>
+
+<section class="card">
+  <h2>Weekly Completion</h2>
+  <canvas id="weeklyChart" height="120"></canvas>
+</section>
+
+<section class="card">
+  <h2>History</h2>
+  <table>
+    <thead><tr><th>Day</th><th>Total</th><th>Closed</th><th>%</th></tr></thead>
+    <tbody>
+      {% for d in history %}
+      <tr><td>{{ d.day }}</td><td>{{ d.total }}</td><td>{{ d.closed }}</td><td>{{ d.pct }}%</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<script>
+  window.weeklyData = {{ weekly|tojson }};
+</script>
+{% endblock %}

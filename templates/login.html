@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <title>Daily Close Login</title>
+</head>
+<body>
+  <main class="auth-wrap">
+    <form method="post" class="card auth-card">
+      <h1>Daily Close</h1>
+      <p class="muted">Single-user login</p>
+      {% if error %}<p class="error">{{ error }}</p>{% endif %}
+      <label>Email</label>
+      <input type="email" name="email" value="{{ app_email }}" required />
+      <label>Password</label>
+      <input type="password" name="password" required />
+      <button type="submit">Login</button>
+    </form>
+  </main>
+</body>
+</html>

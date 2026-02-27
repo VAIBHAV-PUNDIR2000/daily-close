@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: daily-close
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    autoDeploy: true
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: APP_EMAIL
+        value: vaibhavpundir29@gmail.com
+      - key: REMINDER_EMAIL
+        value: vaibhavpundir29@gmail.com
+      - key: ENABLE_SCHEDULER
+        value: "1"
