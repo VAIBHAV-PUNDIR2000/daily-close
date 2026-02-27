@@ -18,9 +18,9 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-APP_EMAIL = os.getenv("APP_EMAIL", "vaibhavpundir29@gmail.com")
-APP_PASSWORD = os.getenv("APP_PASSWORD", "dailyclose")
-REMINDER_EMAIL = os.getenv("REMINDER_EMAIL", "vaibhavpundir29@gmail.com")
+APP_EMAIL = os.getenv("APP_EMAIL", "owner@example.com")
+APP_PASSWORD = os.getenv("APP_PASSWORD", "change-me")
+REMINDER_EMAIL = os.getenv("REMINDER_EMAIL", "owner@example.com")
 SMTP_USER = os.getenv("SMTP_USER", "")
 SMTP_PASS = os.getenv("SMTP_PASS", "")
 SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")

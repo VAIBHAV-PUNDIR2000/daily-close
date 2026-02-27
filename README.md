@@ -26,7 +26,9 @@ Open: http://127.0.0.1:5000
 1. Push this folder to GitHub.
 2. Create new Render Blueprint using `render.yaml`.
 3. Set env vars:
+   - APP_EMAIL
    - APP_PASSWORD
+   - REMINDER_EMAIL
    - SMTP_USER
    - SMTP_PASS
 4. Deploy.

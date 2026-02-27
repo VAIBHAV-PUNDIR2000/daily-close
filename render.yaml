@@ -9,9 +9,5 @@ services:
     envVars:
       - key: SECRET_KEY
         generateValue: true
-      - key: APP_EMAIL
-        value: vaibhavpundir29@gmail.com
-      - key: REMINDER_EMAIL
-        value: vaibhavpundir29@gmail.com
       - key: ENABLE_SCHEDULER
         value: "1"
